@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Responsive Image Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Image Gallery</h1>
+  <p class="subtitle">
+    Click any image to open the lightbox, navigate with next/prev or arrow keys, and
+    filter by category.
+  </p>
+
+  <div class="gallery-container">
+    <!-- Filter buttons -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="nature">Nature</button>
+      <button class="filter-btn" data-filter="city">City</button>
+      <button class="filter-btn" data-filter="people">People</button>
+      <button class="filter-btn" data-filter="abstract">Abstract</button>
+    </div>
+
+    <!-- Gallery grid -->
+    <div class="gallery">
+      <!-- Example items (replace src with your images) -->
+      <div class="gallery-item" data-category="nature">
+        <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Forest" />
+        <div class="gallery-overlay">
+          <div>
+            <div class="gallery-title">Misty Forest</div>
+            <div class="gallery-category">Nature</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="nature">
+        <img src="https://images.pexels.com/photos/210186/pexels-photo-210186.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mountains" />
+        <div class="gallery-overlay">
+          <div>
+            <div class="gallery-title">Snowy Peaks</div>
+            <div class="gallery-category">Nature</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="city">
+        <img src="https://images.pexels.com/photos/374870/pexels-photo-374870.jpeg?auto=compress&cs=tinysrgb&w=800" alt="City skyline" />
+        <div class="gallery-overlay">
+          <div>
+            <div class="gallery-title">City Skyline</div>
+            <div class="gallery-category">City</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="city">
+        <img src="https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Street" />
+        <div class="gallery-overlay">
+          <div>
+            <div class="gallery-title">Night Street</div>
+            <div class="gallery-category">City</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="people">
+        <img src="https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Portrait" />
+        <div class="gallery-overlay">
+          <div>
+            <div class="gallery-title">Portrait</div>
+            <div class="gallery-category">People</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="people">
+        <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Friends" />
+        <div class="gallery-overlay">
+          <div>
+            <div class="gallery-title">Friends</div>
+            <div class="gallery-category">People</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="abstract">
+        <img src="https://images.pexels.com/photos/381739/pexels-photo-381739.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Neon lines" />
+        <div class="gallery-overlay">
+          <div>
+            <div class="gallery-title">Neon Lines</div>
+            <div class="gallery-category">Abstract</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="abstract">
+        <img src="https://images.pexels.com/photos/2387793/pexels-photo-2387793.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Color splash" />
+        <div class="gallery-overlay">
+          <div>
+            <div class="gallery-title">Color Splash</div>
+            <div class="gallery-category">Abstract</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content" tabindex="-1">
+      <div class="lightbox-img-wrapper">
+        <img id="lightbox-img" src="" alt="" />
+        <div class="lightbox-nav">
+          <button class="nav-btn left" id="prev-btn" aria-label="Previous image">
+            &#10094;
+          </button>
+          <button class="nav-btn right" id="next-btn" aria-label="Next image">
+            &#10095;
+          </button>
+        </div>
+        <button class="lightbox-close" id="close-btn" aria-label="Close">
+          &times;
+        </button>
+      </div>
+      <div class="lightbox-caption">
+        <span id="lightbox-title"></span>
+        <span id="lightbox-meta"></span>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
